@@ -1,0 +1,159 @@
+.price {
+  padding: 40px 0px;
+  color: #000;
+  &__title {
+    margin-bottom: 40px;
+  }
+  // Скрол
+  .scrollbar {
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e2d9cf;
+    border-radius: 5px;
+    @media (min-width: 1130px) {
+      background: #fff;
+    }
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $yellowColor;
+    width: 150px;
+    border-radius: 5px;
+  }
+  // Оболочка ітемів
+  &__inner {
+    width: 1130px;
+    padding: 0px 20px 10px 20px;
+    background-color: #f5f3f1;
+    border-radius: 20px;
+  }
+  &__categories {
+    display: flex;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    width: 1050px;
+    margin: 0 auto;
+    span {
+      &:nth-child(1) {
+        flex-basis: 435px;
+      }
+      &:nth-child(2) {
+        flex-basis: 107px;
+      }
+      &:nth-child(3) {
+        flex-basis: 125px;
+      }
+      &:nth-child(4) {
+        flex-basis: 163px;
+      }
+      &:nth-child(5) {
+        flex-basis: 123px;
+      }
+    }
+  }
+  // Ітеми
+  &__item {
+    width: 1050px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px dashed #cdcccb;
+    border-radius: 6px;
+    padding: 10px 30px;
+    &:nth-child(5) .price__service,
+    &:nth-child(6) .price__service {
+      flex-basis: 370px;
+    }
+  }
+  &__service {
+    flex-basis: 380px;
+  }
+
+  &__number {
+    border: 2px solid #ddd;
+    width: 65px;
+    height: 30px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  &__sum {
+    width: 100px;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  //Чекбокси
+  &__check {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  &__check-btn {
+    appearance: none;
+    &:checked + .price__check-text::before {
+      opacity: 1;
+    }
+  }
+  &__check-text {
+    background-image: url("../img/price/price-checkbox.png");
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("../img/price/price-active-checkbox.png");
+      position: absolute;
+      opacity: 0;
+      width: 29px;
+      height: 29px;
+      z-index: 2;
+    }
+  }
+}
+
+.sum {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $mediumDisplay+px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__btn {
+    width: 161px;
+    height: 35px;
+    line-height: 0px;
+    margin-bottom: 20px;
+  }
+  &__result {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    @media (min-width: $mediumDisplay+px) {
+      margin-left: auto;
+      padding-right: 40px;
+    }
+  }
+  form .sum__sum-price {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  form .sum__form-btn {
+    padding: 15px 0px;
+    width: 300px;
+  }
+}

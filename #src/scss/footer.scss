@@ -1,0 +1,218 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 0px 0px 0px;
+  @media (min-width: $mediumDisplay+px) {
+    background-image: url("../img/gradient-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0px 0px 0px;
+  }
+  &__inner {
+    position: relative;
+    padding-bottom: 70px;
+    @media (min-width: $mediumDisplay+px) {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    @media (min-width: $normalDisplay+px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    @media (min-width: $mediumDisplay+px) {
+      order: 3;
+    }
+    @media (min-width: $normalDisplay+px) {
+      margin-bottom: 0px;
+    }
+
+    &__title {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    &__name {
+      height: 40px;
+      padding: 0px 0px 0px 40px;
+      background-image: url("../img/banner/name.jpg");
+      background-repeat: no-repeat;
+      background-position: 15px 10px;
+      margin-bottom: 10px;
+    }
+    &__tel {
+      height: 40px;
+      padding: 0px 0px 0px 40px;
+      background-image: url("../img/banner/phone.jpg");
+      background-repeat: no-repeat;
+      background-position: 15px 10px;
+      margin-bottom: 10px;
+    }
+    &__text {
+      height: 60px;
+      padding: 9px 0px 0px 40px;
+      background-image: url("../img/banner/message.jpg");
+      background-repeat: no-repeat;
+      background-position: 15px 10px;
+      margin-bottom: 32px;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @media (min-width: $mediumDisplay+px) {
+      order: 1;
+    }
+    @media (min-width: $normalDisplay+px) {
+      margin-bottom: 0px;
+    }
+
+    &__logo {
+      margin-bottom: 40px;
+      @media (min-width: $mediumDisplay+px) {
+        margin-bottom: 0;
+        position: absolute;
+        top: -85px;
+      }
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    &__viber {
+      background-image: url("../img/icons/viber.svg");
+      background-repeat: no-repeat;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 40px;
+      margin-bottom: 10px;
+    }
+    &__whatsapp {
+      background-image: url("../img/icons/whatsapp.svg");
+      background-repeat: no-repeat;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 40px;
+      margin-bottom: 40px;
+    }
+    &__tel {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $mediumDisplay+px) {
+      order: 2;
+      margin-bottom: 50px;
+    }
+    @media (min-width: $normalDisplay+px) {
+      margin-bottom: 0px;
+      border-right: 2px solid #584d52;
+      border-left: 2px solid #584d52;
+      padding: 0px 80px 0px 60px;
+    }
+
+    &__title {
+      width: 110px;
+      font-size: 16px;
+      text-transform: uppercase;
+      background-color: transparent;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 30px;
+      cursor: pointer;
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        width: 7px;
+        height: 0.5px;
+        background-color: #fff;
+        position: absolute;
+        top: 6px;
+        right: 0px;
+        transition: all 0.3s linear;
+        @media (min-width: $mediumDisplay+px) {
+          display: none;
+        }
+      }
+      &::before {
+        transform: rotate(40deg);
+        right: 5px;
+      }
+      &::after {
+        transform: rotate(-40deg);
+      }
+    }
+    &__title.active::after,
+    &__title.active::before {
+      background: red;
+    }
+    &__title.active::before {
+      transform: rotate(-40deg);
+    }
+    &__title.active::after {
+      transform: rotate(40deg);
+    }
+
+    &__content {
+      display: none;
+      flex-direction: column;
+      @media (min-width: $mediumDisplay+px) {
+        display: block;
+      }
+    }
+    &__name {
+      margin-bottom: 35px;
+      line-height: 20px;
+    }
+    &__num {
+      margin-bottom: 35px;
+    }
+    &__location {
+      margin-bottom: 50px;
+    }
+    &__link {
+      display: block;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+}
+
+.bottom-line {
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
+  @media (min-width: $mediumDisplay+px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  span {
+    margin-bottom: 10px;
+  }
+}

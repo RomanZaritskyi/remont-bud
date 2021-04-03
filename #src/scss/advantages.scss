@@ -1,0 +1,104 @@
+.advantages {
+  background-image: url("../img/advantages-block/advabtages-mobile-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: $smallDisplay+px) {
+    background-image: url("../img/gradient-bg.png");
+  }
+
+  &__inner {
+    padding: 60px 0px 75px 0px;
+  }
+  &__title {
+    color: $yellowColor;
+    margin-bottom: 40px;
+  }
+  &__items-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+
+    @media (min-width: $smallDisplay+px) {
+      background-color: #28242e;
+      width: 340px;
+      height: 240px;
+      justify-content: center;
+      border-radius: 10px;
+      margin: 15px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(3) {
+      .advantages__text {
+        margin-bottom: 10px;
+      }
+    }
+    &:nth-child(4) {
+      .advantages__text {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  // Icons
+  &__builder-icon {
+    background: url("../img//advantages-block/advantages-builder.svg") center no-repeat;
+    margin-bottom: 25px;
+  }
+  &__contract-icon {
+    background: url("../img/advantages-block/contract.svg") center no-repeat;
+    margin-bottom: 25px;
+  }
+  &__performers-of-work-icon {
+    background: url("../img/advantages-block/performance-of-works.svg") center no-repeat;
+    margin-bottom: 25px;
+  }
+  &__deadline-icon {
+    background: url("../img/advantages-block/deadline.svg") center no-repeat;
+    margin-bottom: 25px;
+  }
+  &__guarantee-icon {
+    background: url("../img/advantages-block/guarantee.svg") center no-repeat;
+    margin-bottom: 25px;
+  }
+  //end icons
+  &__suptitle {
+    color: $yellowColor;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &__text {
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    line-height: 20px;
+    width: 287px;
+    margin-bottom: 30px;
+  }
+  &__reviews {
+    border: $borderColor;
+    border-radius: 10px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    width: 245px;
+    text-align: center;
+    height: 30px;
+    line-height: 26px;
+    opacity: 0.7;
+    transition: all 0.2s linear;
+    &:hover {
+      opacity: 1;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}

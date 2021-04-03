@@ -1,0 +1,101 @@
+<section class="price container">
+  <h2 class="price__title title">Наші ціни</h2>
+
+  <div class="scrollbar">
+    <div class="price__inner">
+      <div class="price__categories">
+        <span>Назва робіт</span>
+        <span>Од. виміру</span>
+        <span>Ціна, грн</span>
+        <span>Кількість</span>
+        <span>Сума</span>
+        <span>Вибрати</span>
+      </div>
+      <!-- item 1 -->
+      <div class="price__item">
+        <p class="price__service">
+          Ремонт в новобудові (підготовчі і оздоблювальні роботи, без матеріалу)
+        </p>
+        <span class="price__unit">м<sup>2</sup></span>
+        <span class="price__cost">1900,00</span>
+        <input type="text" class="price__number">
+        <input type="text" value="0" class="price__sum">
+        <label class="price__check">
+          <input type="checkbox" class="price__check-btn">
+          <span class="price__check-text"></span>
+        </label>
+      </div>
+
+      <!-- item 2 -->
+      <div class="price__item">
+        <p class="price__service">
+          Ремонт на вторинному ринку (демонтаж, підготовчі і оздоблювальні роботи, без матеріалу)
+        </p>
+        <span class="price__unit">м<sup>2</sup></span>
+        <span class="price__cost">2300,00</span>
+        <input type="text" value="10" class="price__number">
+        <input type="text" value="23000,00" class="price__sum">
+        <label class="price__check ">
+          <input type="checkbox" checked class="price__check-btn">
+          <span class="price__check-text"></span>
+        </label>
+      </div>
+
+      <!-- item 3 -->
+      <div class="price__item">
+        <p class="price__service">
+          Ремонт офісів та інших комерційних об'єктів
+        </p>
+        <span class="price__unit">м<sup>2</sup></span>
+        <span class="price__cost">1750,00</span>
+        <input type="text" class="price__number">
+        <input type="text" value="0" class="price__sum">
+        <label class="price__check">
+          <input type="checkbox" class="price__check-btn">
+          <span class="price__check-text"></span>
+        </label>
+      </div>
+
+      <!-- item 4 -->
+      <div class="price__item">
+        <p class="price__service">
+          + Електрика (розетка, вимикач, розподільча коробка, щиток)
+        </p>
+        <span class="price__unit">точка</span>
+        <span class="price__cost">125,00</span>
+        <input type="text" value="21" class="price__number">
+        <input type="text" value="2625,00" class="price__sum">
+        <label class="price__check">
+          <input type="checkbox" checked class="price__check-btn">
+          <span class="price__check-text"></span>
+        </label>
+      </div>
+
+      <!-- item 5 -->
+      <div class="price__item">
+        <p class="price__service">
+          + Сантехніка: монтаж водопровідних труб (подача води і каналізація)
+        </p>
+        <span class="price__unit ">точка</span>
+        <span class="price__cost ">700,00</span>
+        <input type="text" value="10" class="price__number">
+        <input type="text" value="7000,00" class="price__sum">
+        <label class="price__check ">
+          <input type="checkbox" checked class="price__check-btn ">
+          <span class="price__check-text "></span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sum">
+    <button class="sum__btn button">Весь список</button>
+    <span class="sum__result">Загальна сума</span>
+
+    <form action="#">
+      <span class="sum__sum-price">32625,00 грн</span>
+      <button type="submit" class="sum__form-btn button-yellow-bg">Надіслати запит</button>
+    </form>
+  </div>
+</section>

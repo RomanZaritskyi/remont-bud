@@ -1,0 +1,369 @@
+// topline
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  min-width: 100%;
+  background-color: transparent;
+  @media (min-width: $mediumDisplay+px) {
+    position: static;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    @media (min-width: $mediumDisplay+px) {
+    }
+  }
+  .burger {
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #a6a6a6;
+      box-shadow: 0px 6px 0px 0px #a6a6a6, 0px 12px 0px 0px #a6a6a6;
+    }
+  }
+}
+
+.logo {
+  a {
+    width: 150px;
+    height: 50px;
+    display: block;
+    background-image: url(../img/logo.svg);
+    background-repeat: no-repeat;
+    @media (min-width: $mediumDisplay+px) {
+      background-image: url(../img/logo-black.svg);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.call-btn {
+  cursor: pointer;
+  &__link {
+    display: block;
+    background-image: url("../img/header/phone2.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 30px;
+    height: 25px;
+  }
+  @media (min-width: $mediumDisplay+px) {
+    display: none;
+  }
+}
+
+.top-line__btn {
+  display: none;
+}
+@media (min-width: $mediumDisplay+px) {
+  .top-line__btn {
+    display: block;
+    padding: 15px 30px 15px 70px;
+    background-color: #fff0d0;
+    border-radius: 5px;
+    background-image: url("../img/header/book-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #caaf75;
+    }
+
+    .top-line__btn-link {
+      display: block;
+      color: #000;
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// topline
+
+//contact
+.contact {
+  display: none;
+}
+@media (min-width: $normalDisplay+px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__phones {
+      display: flex;
+      margin-bottom: 10px;
+      span {
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 20px;
+      }
+    }
+    .wtsup {
+      background-image: url("../img/icons/whatsapp.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
+
+    .viber {
+      background-image: url("../img/icons/viber.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 18px;
+      height: 18px;
+    }
+
+    &__text {
+      align-self: flex-end;
+      span {
+        font-size: 14px;
+        background-image: url("../img/header/green-dot.svg");
+        background-repeat: no-repeat;
+        background-position: 0px center;
+        padding-left: 20px;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// topline
+
+// header
+.header {
+  display: none;
+  @media (min-width: $xSmallDisplay+px) {
+    display: block;
+    z-index: 1;
+  }
+  @media (min-width: $mediumDisplay+px) {
+    background-color: $yellowColor;
+  }
+}
+
+//navigation
+.nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgb(46, 44, 44);
+  padding: 100px 30px 30px 30px;
+  transition: left 0.3s ease 0s;
+  overflow: auto;
+  &::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: black;
+    z-index: 2;
+    @media (min-width: $mediumDisplay+px) {
+      display: none;
+    }
+  }
+  // Виїзд бургер меню з ліва
+  &.\._active {
+    left: 0;
+  }
+
+  @media (min-width: $mediumDisplay+px) {
+    position: static;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    background-color: $yellowColor;
+    overflow: hidden;
+  }
+
+  // list & sub-list
+  &__list {
+    @media (min-width: $mediumDisplay+px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      width: 930px;
+    }
+  }
+
+  //  li
+  &__list > li {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (min-width: $mediumDisplay+px) {
+      margin-bottom: 0;
+    }
+
+    &:focus .nav__sub-list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+  &__list > li._active .nav__arrow {
+    transform: rotate(-180deg);
+  }
+
+  //  li
+  &__sub-list {
+    position: relative;
+    padding: 10px 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #fff;
+    flex: 1 1 100%;
+    display: none;
+    @media (min-width: $mediumDisplay+px) {
+      display: flex;
+      position: absolute;
+      left: -125px;
+      top: 45px;
+      width: 1110px;
+      background-color: #fff;
+      border-radius: 5px;
+      line-height: 20px;
+      padding: 20px 30px;
+      // ховаю dropdown
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.2s ease-in-out;
+      width: 770px;
+
+      @media (min-width: $normalDisplay+px) {
+        width: 1130px;
+      }
+    }
+  }
+  //  Відкриваю суб меню при тапі на трикутник
+  &__list > li.\._active ul.nav__sub-list {
+    display: block;
+  }
+  // Перевертаю трикутник в бургерменб на 180 градусів
+  &__list li.\._active span.nav__arrow {
+    transform: rotate(-180deg);
+  }
+  // list & sub-list
+
+  // wrapper
+  .sub-link-wrapper {
+    @media (min-width: $mediumDisplay+px) {
+      margin-right: 100px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      @media (min-width: $mediumDisplay+px) {
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        @media (min-width: $mediumDisplay+px) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  // wrapper
+
+  // link & sub-link
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    flex: 1 1 auto;
+    @media (min-width: $mediumDisplay+px) {
+      color: #000;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      font-size: 15px;
+
+      &:hover {
+        color: #fff;
+      }
+      &::after {
+        content: "";
+        width: 50%;
+        position: absolute;
+        top: 230%;
+        left: 25%;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        opacity: 0;
+        visibility: 0;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover::after {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__sub-link {
+    color: #000;
+    padding-left: 20px;
+    background-image: url("../img/header/dot-header.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-bottom: 10px;
+    @media (min-width: $mediumDisplay+px) {
+      padding-left: 20px;
+      color: #000;
+      transition: all 0.2s ease-out;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .nav__arrow {
+    display: block;
+    width: 0;
+    height: 0px;
+    margin-left: 5px;
+    transition: transform 0.3s ease 0s;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #fff;
+    @media (min-width: $mediumDisplay+px) {
+      display: none;
+    }
+  }
+
+  // link & sublink
+}
+// Navigation

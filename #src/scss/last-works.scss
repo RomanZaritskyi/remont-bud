@@ -1,0 +1,77 @@
+.last-works {
+  &__inner {
+    padding: 60px 0px;
+  }
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  // Slider
+  &__slider {
+    max-width: 700px;
+    margin: 0 auto;
+    @media (min-width: $normalDisplay+px) {
+      max-width: 1130px;
+    }
+
+    .slick-list {
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .slick-track {
+      display: flex;
+    }
+    .slick-slide {
+      width: 330px;
+      padding: 10px;
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        margin: 0 10px;
+        button {
+          font-size: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #a6a6a6;
+        }
+      }
+      // Коли кнопка активна
+      .slick-active button {
+        background: $yellowColor;
+        position: relative;
+        &::after {
+          content: "";
+          width: 17px;
+          height: 17px;
+          background-color: $yellowColor;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  //slider image
+  &__slider-img {
+    margin-bottom: 10px;
+    img {
+      display: block;
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+  //slider text
+  &__text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
