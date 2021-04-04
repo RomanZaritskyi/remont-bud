@@ -156,8 +156,12 @@
   }
 }
 
-//navigation
+.naw-wrapper {
+  position: relative;
+}
+// МЕНЮ
 .nav {
+  //Бургер меню
   display: block;
   position: fixed;
   top: 0;
@@ -168,6 +172,17 @@
   padding: 100px 30px 30px 30px;
   transition: left 0.3s ease 0s;
   overflow: auto;
+
+  // Звичайне меню
+  @media (min-width: $mediumDisplay + px) {
+    position: static;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    background-color: $yellowColor;
+    overflow: visible;
+  }
+  // Плашка для бургер меню
   &::before {
     content: "";
     position: fixed;
@@ -186,19 +201,12 @@
     left: 0;
   }
 
-  @media (min-width: $mediumDisplay+px) {
-    position: static;
-    height: 60px;
-    padding: 0;
-    display: flex;
-    background-color: $yellowColor;
-    overflow: hidden;
-  }
-
-  // list & sub-list
+  // Лінки меню
   &__list {
+    display: flex;
+    flex-direction: column;
     @media (min-width: $mediumDisplay+px) {
-      display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       font-size: 15px;
@@ -206,102 +214,15 @@
       width: 930px;
     }
   }
-
-  //  li
-  &__list > li {
-    position: relative;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    @media (min-width: $mediumDisplay+px) {
-      margin-bottom: 0;
-    }
-
-    &:focus .nav__sub-list {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
-  &__list > li._active .nav__arrow {
-    transform: rotate(-180deg);
-  }
-
-  //  li
-  &__sub-list {
-    position: relative;
-    padding: 10px 5px;
-    margin-top: 15px;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-color: #fff;
-    flex: 1 1 100%;
-    display: none;
-    @media (min-width: $mediumDisplay+px) {
-      display: flex;
-      position: absolute;
-      left: -125px;
-      top: 45px;
-      width: 1110px;
-      background-color: #fff;
-      border-radius: 5px;
-      line-height: 20px;
-      padding: 20px 30px;
-      // ховаю dropdown
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: all 0.2s ease-in-out;
-      width: 770px;
-
-      @media (min-width: $normalDisplay+px) {
-        width: 1130px;
-      }
-    }
-  }
-  //  Відкриваю суб меню при тапі на трикутник
-  &__list > li.\._active ul.nav__sub-list {
-    display: block;
-  }
-  // Перевертаю трикутник в бургерменб на 180 градусів
-  &__list li.\._active span.nav__arrow {
-    transform: rotate(-180deg);
-  }
-  // list & sub-list
-
-  // wrapper
-  .sub-link-wrapper {
-    @media (min-width: $mediumDisplay+px) {
-      margin-right: 100px;
-    }
-    &:last-child {
-      margin-right: 0px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      @media (min-width: $mediumDisplay+px) {
-        margin-bottom: 20px;
-      }
-
-      &:last-child {
-        @media (min-width: $mediumDisplay+px) {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  // wrapper
-
-  // link & sub-link
+  // Силі лінків першого рівня
   &__link {
     color: #fff;
     text-transform: uppercase;
     font-size: 20px;
     flex: 1 1 auto;
-    @media (min-width: $mediumDisplay+px) {
+  }
+  @media (min-width: $mediumDisplay+px) {
+    .nav__link {
       color: #000;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
@@ -332,14 +253,68 @@
       }
     }
   }
+  // Стилі li першого рівня в списку nav__list
+  &__list > li {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (min-width: $mediumDisplay+px) {
+      margin-bottom: 0;
+    }
+    // Показ суб менюю під основним меню
+    &:focus .nav__sub-list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+  // Стилі підменю
+  &__sub-list {
+    position: relative;
+    padding: 10px 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #fff;
+    flex: 1 1 100%;
+    transition: all 0.3s ease 1s;
+    display: none;
+    // стилі звичайного підменю
+    @media (min-width: $mediumDisplay+px) {
+      position: absolute;
+      left: -92px;
+      top: 30px;
+      display: flex;
+      width: 1110px;
+      background-color: #fff;
+      border-radius: 5px;
+      line-height: 20px;
+      padding: 20px 30px;
+      z-index: 100;
+      // ховаю підменю
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.2s ease-in-out;
+      width: 750px;
 
+      @media (min-width: $normalDisplay+px) {
+        width: 1130px;
+        left: -125px;
+      }
+    }
+  }
+
+  // Стилі лінків підменю
   &__sub-link {
     color: #000;
-    padding-left: 20px;
+    padding-left: 15px;
+    font-size: 18px;
     background-image: url("../img/header/dot-header.png");
     background-repeat: no-repeat;
     background-position: left center;
-    margin-bottom: 10px;
     @media (min-width: $mediumDisplay+px) {
       padding-left: 20px;
       color: #000;
@@ -349,7 +324,38 @@
       }
     }
   }
+  //Стилі тегів li другого рівня та стилi обгорток у звичайному меню
+  .sub-link-wrapper {
+    li {
+      margin-bottom: 10px;
+    }
+    &:last-child {
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media (min-width: $mediumDisplay+px) {
+    .sub-link-wrapper {
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 0px;
+      }
+      & > li {
+        margin-bottom: 20px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  @media (min-width: $normalDisplay+px) {
+    .sub-link-wrapper {
+      margin-right: 100px;
+    }
+  }
 
+  //Стрілка
   .nav__arrow {
     display: block;
     width: 0;
@@ -363,7 +369,13 @@
       display: none;
     }
   }
-
-  // link & sublink
+  // Анімація стрілки
+  // Перевертаю трикутник в бургерменб на 180 градусів
+  &__list li.\._active span.nav__arrow {
+    transform: rotate(-180deg);
+  }
+  //  Відкриваю суб меню при тапі на трикутник
+  &__list > li.\._active ul.nav__sub-list {
+    display: block;
+  }
 }
-// Navigation
