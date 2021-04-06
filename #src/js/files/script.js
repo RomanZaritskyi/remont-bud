@@ -84,11 +84,14 @@ if (menuArrows.length > 0) {
 
 // бургер меню
 const iconMenu = document.querySelector('.burger');
+
 if (iconMenu) {
   const nav = document.querySelector('.nav')
+  const header = document.querySelector('.header')
   iconMenu.addEventListener("click", function (e) {
-    iconMenu.classList.toggle('._active');
+    // iconMenu.classList.toggle('._active');//для анімації іконки
     nav.classList.toggle('._active');
+    header.classList.toggle('._active');
   })
 }
 
