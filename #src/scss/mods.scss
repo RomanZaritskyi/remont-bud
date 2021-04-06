@@ -1,4 +1,5 @@
 .button-yellow-bg {
+  display: block;
   background-color: $yellowColor;
   border-radius: 15px;
   text-transform: uppercase;
@@ -8,7 +9,31 @@
   box-shadow: 0 4px 0px 0 #c5720c;
   width: 270px;
   height: 48px;
-  font-size: 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: font-size 0.2s ease 0s;
+  // &:hover {
+  //   position: relative;
+  //   background-color: #f3bc4d;
+  //   font-size: 14.5px;
+  // }
+  // &:active {
+  //   top: 4px;
+  //   box-shadow: 0 3px 0px 0 #c5720c;
+  // }
+}
+@media (min-width: $mediumDisplay+px) {
+  .button-yellow-bg {
+    &:hover {
+      position: relative;
+      background-color: #f3bc4d;
+      font-size: 14.5px;
+    }
+    &:active {
+      top: 4px;
+      box-shadow: 0 3px 0px 0 #c5720c;
+    }
+  }
 }
 
 .start--icons {
@@ -28,8 +53,27 @@
 
 .banner--inputs {
   border: 1px solid #9f9f9f;
+  width: 100%;
   margin-bottom: 20px;
-  width: 270px;
   border-radius: 10px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.button-link {
+  display: block;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  line-height: 27px;
+  background-color: transparent;
+  border: 2px solid $yellowColor;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: font-size 0.2s ease 0s;
+  &:hover {
+    font-size: 15px;
+  }
 }

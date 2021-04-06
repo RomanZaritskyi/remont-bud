@@ -31,6 +31,13 @@
       justify-content: center;
       border-radius: 10px;
       margin: 15px;
+
+      transition: all 0.2s ease-in 0s;
+    }
+    &:hover {
+      @media (min-width: $normalDisplay+px) {
+        background-color: rgb(63, 61, 61);
+      }
     }
     &:last-child {
       margin-bottom: 0;

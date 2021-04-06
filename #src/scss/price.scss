@@ -130,10 +130,8 @@
     align-items: flex-start;
   }
   &__btn {
-    width: 161px;
-    height: 35px;
-    line-height: 0px;
     margin-bottom: 20px;
+    color: black;
   }
   &__result {
     text-transform: uppercase;
@@ -154,6 +152,5 @@
   }
   form .sum__form-btn {
     padding: 15px 0px;
-    width: 300px;
   }
 }

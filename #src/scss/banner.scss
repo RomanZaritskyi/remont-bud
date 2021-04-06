@@ -35,6 +35,9 @@
   &__btn {
     margin-bottom: 20px;
     position: relative;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 46px;
     .message-icon {
       display: block;
       background-image: url("../img/message.svg");
@@ -44,7 +47,7 @@
       height: 20px;
       position: absolute;
       top: 15px;
-      left: 25px;
+      left: 18px;
     }
   }
 
@@ -55,14 +58,18 @@
     text-transform: uppercase;
     line-height: 48px;
     background-color: #fff;
+    color: black;
     height: 48px;
-    padding-right: 20px;
-    padding-left: 40px;
-    max-width: 300px;
+    padding-left: 25px;
+    width: 300px;
     border-radius: 15px;
     font-size: 13px;
     font-weight: 700;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    transition: background-color 0.3s ease 0s;
+    &:hover {
+      background-color: $yellowColor;
+    }
     .link-icon {
       display: block;
       width: 20px;
@@ -77,57 +84,59 @@
   }
 }
 
-.banner-form {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  width: 295px;
-  padding: 40px 0;
-  background-color: #fff;
-  border-radius: 10px;
-  position: absolute;
-  top: -100px;
-  right: 13px;
-  @media (min-width: $normalDisplay+px) {
-    width: 350px;
-    top: -100px;
-    right: 0px;
-  }
+// .banner-form {
+//   display: none;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 295px;
+//   padding: 40px 0;
+//   background-color: #fff;
+//   border-radius: 10px;
+//   position: absolute;
+//   top: -100px;
+//   right: 13px;
+//   @media (min-width: $normalDisplay+px) {
+//     width: 350px;
+//     top: -100px;
+//     right: 0px;
+//   }
 
-  &__title {
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  &__suptitle {
-    color: #9f9f9f;
-    margin-bottom: 20px;
-  }
-  &__name {
-    height: 40px;
-    padding: 0px 0px 0px 40px;
-    background-image: url("../img/name.png");
-    background-repeat: no-repeat;
-    background-position: 15px 10px;
-  }
-  &__tel {
-    height: 40px;
-    padding: 0px 0px 0px 40px;
-    background-image: url("../img/phone.png");
-    background-repeat: no-repeat;
-    background-position: 15px 10px;
-  }
-  &__text {
-    height: 80px;
-    padding: 9px 0px 0px 40px;
-    background-image: url("../img/message.png");
-    background-repeat: no-repeat;
-    background-position: 15px 10px;
-  }
-}
-
-.active-form {
-  display: flex;
-}
+//   &__title {
+//     font-size: 18px;
+//     text-transform: uppercase;
+//     font-weight: 900;
+//     text-align: center;
+//     margin-bottom: 15px;
+//   }
+//   &__suptitle {
+//     color: #9f9f9f;
+//     margin-bottom: 20px;
+//   }
+//   &__name {
+//     height: 40px;
+//     padding: 0px 0px 0px 40px;
+//     background-image: url("../img/name.png");
+//     background-repeat: no-repeat;
+//     background-position: 15px 10px;
+//   }
+//   &__tel {
+//     height: 40px;
+//     padding: 0px 0px 0px 40px;
+//     background-image: url("../img/phone.png");
+//     background-repeat: no-repeat;
+//     background-position: 15px 10px;
+//   }
+//   &__text {
+//     height: 80px;
+//     padding: 9px 0px 0px 40px;
+//     background-image: url("../img/message.png");
+//     background-repeat: no-repeat;
+//     background-position: 15px 10px;
+//   }
+// }
+// .banner-form__btn:active {
+//   background-color: #000;
+// }
+// .active-form {
+//   display: flex;
+// }
