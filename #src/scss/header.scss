@@ -1,4 +1,4 @@
-.header-wrapper {
+.header {
   position: fixed;
   z-index: 20;
   width: 100%;
@@ -70,9 +70,9 @@
     display: block;
     position: absolute;
     right: 5px;
-    top: -60px;
-    width: 300px;
-    height: 35px;
+    padding: 10px;
+    top: -100px;
+    width: 235px;
     background-color: #fff;
     border-radius: 5px;
     display: flex;
@@ -80,15 +80,27 @@
     justify-content: center;
     transition: all 0.3s ease 0s;
     &.\._active {
-      top: 45px;
+      top: 27px;
     }
+  }
+  &__contact-phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 700;
+    span {
+      margin-bottom: 10px;
+    }
+  }
+  &__contact-text {
+    font-weight: 700;
   }
 }
 
 .top-line__btn {
   display: none;
 }
-@media (min-width: $mediumDisplay+px) {
+@media (min-width: $normalDisplay+px) {
   .top-line__btn {
     display: block;
     padding: 15px 30px 15px 70px;
@@ -112,14 +124,13 @@
     }
   }
 }
-
 // topline
 
 //contact
 .contact {
   display: none;
 }
-@media (min-width: $normalDisplay+px) {
+@media (min-width: $mediumDisplay+px) {
   .contact {
     display: flex;
     flex-direction: column;
@@ -169,7 +180,7 @@
 // topline
 
 // header
-.header {
+.navigation-bar {
   display: none;
 
   @media (min-width: $xSmallDisplay+px) {
